@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+  <link href="main.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Poiret+One|Open+Sans+Condensed:300 | Cinzel' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
+  
+</head>
+<body>
+  <header>
+        <img src="img/main.jpg" id="carnet">
+        <h1>Victor's Page</h1>
+        <ul>
+          <li><a href="index.html">About Me</a></li>
+          <li><a href="gallery.html">Photos</a></li>
+          <li><a href="foods.html">Favorite Foods</a></li>
+          <li><a href="movies.html">Favorite Movies</a></li>
+        </ul>
+  </header>
+      
+      <h2 id="h2food">Simple and not so simple. My favourite foods!</h2>
+      <div class="wrapper_food">
+          <div class="first show-description ">
+            <p class="foods">Super tortilla <span class="price">$10</span><br />
+            <small>Our tortilla de siempre, with the best organic potatoes and olive oil. A very simple, yet tasty dish found all over Spain! </small></p>
+          </div>
+
+          <div class="second show-description ">
+            <p class="foods">Chipirones a la Plancha <span class="price">$22</span><br />
+            <small>This is another tapas staple. A delicious mix of Mediterranean flavors including garlic, parsley, olive oil, alioli and of course a delicious baby squid.</small></p>
+          </div>
+      
+          <div class="dessert show-description ">
+            <p class="foods">Paella Negra<span class="price">$8</span><br />
+            <small>This is the chef's favorite style of paella. Lots of seafood, delicious rice and a secret ingredient that brings its color: calamar ink!</small></p>
+          </div>
+      </div>
+    
+      <div class="social_media" id="social_media">
+              <a href="https://www.linkedin.com/pub/víctor-sagristá-lópez/25/56b/561"><img src="img/linkedin.png"></a>
+              <a href="https://twitter.com/vsagristalopez"><img src="img/twitter.png"></a>
+              <a href="https://www.facebook.com/victor.s.lopez.9"><img src="img/facebook.png"></a><br>
+              <a class="social_media" href="mailto:victorsagristalopez@gmail.com"><p>@victorsagristalopez</p></a>
+      </div>  
+  
+  <script>
+$(".show-description").on("mouseenter", function(){
+ $(this).toggleClass("show-description");
+});
+  </script>
+</body>

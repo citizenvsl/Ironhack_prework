@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+  <link href="main.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Poiret+One|Open+Sans+Condensed:300 | Cinzel' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
+
+</head>
+<body>
+  <header>
+        <img src="img/main.jpg" id="carnet">
+        <h1>Victor's Page</h1>
+        <ul>
+          <li><a href="index.html">About Me</a></li>
+          <li><a href="gallery.html">Photos</a></li>
+          <li><a href="foods.html">Favorite Foods</a></li>
+          <li><a href="movies.html">Favorite Movies</a></li>
+        </ul>
+  </header>
+        <h2><img src="img/pictures_icon.png"><br>Some snippets of my life. Click on the picture to expand it.</h2> <br>
+        <div class="img_frame"></div>
+            <div class="gallery_wrapper">
+                  <div><img src="img/machupichu.jpg"> 
+                    <p>Climbing Machu Pichu</p>
+                  </div>
+                  <div><img id="monkeys" src="img/gibraltar.jpg">
+                    <p>Monkey friends, Gibraltar</p>
+                  </div>
+                  <div><img id="turkey" src="img/turkey.jpg">
+                    <p>Haga Sofia, Istanbul</p>
+                  </div>
+                  <div><img id="rows" src="img/rowhouses.jpg">
+                    <p>DC row houses</p>
+                  </div>
+                  <div><img  id="dc" src="img/dc.jpg">
+                    <p>Cycling, Washington DC</p>
+                  </div>
+                  <div><img id="sevilla" src="img/sevilla6.jpg">
+                    <p>Seville</p>
+                  </div>
+                  <div><img id="motoconcho" src="img/motoconcho.jpg">
+                    <p>Motoconcho, D. Republic</p>
+                  </div>
+                  <div><img id="future" src="img/backtofuture.jpg">
+                    <p>Back to the Future!</p>
+                  </div>
+          </div>
+          <div class="social_media" id="social_media">
+                <a href="https://www.linkedin.com/pub/víctor-sagristá-lópez/25/56b/561"><img src="img/linkedin.png"></a>
+                <a href="https://twitter.com/vsagristalopez"><img src="img/twitter.png"></a>
+                <a href="https://www.facebook.com/victor.s.lopez.9"><img src="img/facebook.png"></a><br>
+                <a class="social_media" href="mailto:victorsagristalopez@gmail.com"><p>@victorsagristalopez</p></a>
+          </div>  
+      
+      
+
+  <script>
+    // listening for the mouseover the pagraph event (like css hover)
+$(".gallery_wrapper div p").mouseover( function (){
+      $(this).css("font-weight","bold").mouseout(function(){
+      $(this).css("font-weight","normal") 
+      })
+})
+    //changing the DOM, making the picture hovered big
+$(".gallery_wrapper img").click(       
+      function(){
+           //new pic being cloned below
+          var clone = $(this).clone()
+          var width = $(document).width()
+          if (width > 500){   // responsive, applies the properties while the screen is bigger than 500
+          //css properties for the cloned picture
+           $(clone).css({
+                  "position": "absolute",
+                  "left": "0",
+                  "top": "-150px",
+                  "border": "10px solid black"})
+                 $("body").find(".img_frame").append(clone)
+                 $("body").find(".img_frame").css({
+                  "z-index":"1"})  }   //end of if
+                 else {$(clone).css({  // properties if the screen is smaller than 500px;
+                  "position": "absolute",
+                  "left": "0",
+                  "top": "30%",
+                  "border": "1px solid transparent",
+                  "max-width": "100%"
+
+                })
+                 $("body").find(".img_frame").append(clone)
+                 $("body").find(".img_frame").css({
+                  "z-index":"1"}) 
+                 //$("body").find(".img_frame").css({
+                 // "z-index":"1"})  
+                  }  //
+                 
+                 $(clone).click(function(){   
+                          $(this).parent("div").css({ 
+                          "z-index":"0"}) 
+                          $(this).remove()
+                  })          
+})
+
+  </script>
+</body>
